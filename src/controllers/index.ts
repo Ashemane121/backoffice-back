@@ -21,3 +21,4 @@ export * from './agence.controller';
 export * from './devise.controller';
 export * from './coupure.controller';
 export * from './devise-coupure.controller';
+export * from './pays.controller';

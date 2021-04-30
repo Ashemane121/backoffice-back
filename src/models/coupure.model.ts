@@ -22,9 +22,9 @@ export class Coupure extends Entity {
   valeur: number;
 
   @property({
-    type: 'string',
+    type: 'object',
   })
-  image?: string;
+  image?: object;
 
   @property({
     type: 'string',

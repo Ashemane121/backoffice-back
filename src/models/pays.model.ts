@@ -16,9 +16,9 @@ export class Pays extends Entity {
   nom: string;
 
   @property({
-    type: 'string',
+    type: 'object',
   })
-  drapeau?: string;
+  drapeau?: object;
 
   @property({
     type: 'string',

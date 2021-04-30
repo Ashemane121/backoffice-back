@@ -12,3 +12,4 @@ export * from './banque.repository';
 export * from './agence.repository';
 export * from './devise.repository';
 export * from './coupure.repository';
+export * from './pays.repository';
