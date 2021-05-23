@@ -10,12 +10,6 @@ export class LigneCaisse extends Entity {
   id?: string;
 
   @property({
-    type: 'string',
-    required: true,
-  })
-  devise: string;
-
-  @property({
     type: 'number',
     required: true,
   })

@@ -15,3 +15,4 @@ export * from './uti-bureau.model';
 export * from './utilisateur.model';
 
 
+export * from './stat.model';

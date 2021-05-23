@@ -11,11 +11,11 @@ import {
   UserServiceBindings
 } from '@loopback/authentication-jwt';
 import {inject} from '@loopback/core';
-import {model, property, repository} from '@loopback/repository';
+import {model, property, repository, FilterExcludingWhere} from '@loopback/repository';
 import {
   get,
   getModelSchemaRef,
-
+  patch,
 
 
   param, post,
@@ -145,7 +145,39 @@ export class UserController {
   ): Promise<User[]> {
     return this.userRepository.find({"where": {"email": email}});
   }
+  @get('/users/{id}')
+  @response(200, {
+    description: 'Agence model instance',
+    content: {
+      'application/json': {
+        schema: getModelSchemaRef(User, {includeRelations: true}),
+      },
+    },
+  })
+  async findById(
+    @param.path.string('id') id: string,
+    @param.filter(User, {exclude: 'where'}) filter?: FilterExcludingWhere<User>
+  ): Promise<User> {
+    return this.userRepository.findById(id, filter);
+  }
 
+  @patch('/users/{id}')
+  @response(204, {
+    description: 'User PATCH success',
+  })
+  async updateById(
+    @param.path.string('id') id: string,
+    @requestBody({
+      content: {
+        'application/json': {
+          schema: getModelSchemaRef(User, {partial: true}),
+        },
+      },
+    })
+    user: User,
+  ): Promise<void> {
+    await this.userRepository.updateById(id, user);
+  }
 
 
   @post('/signup', {

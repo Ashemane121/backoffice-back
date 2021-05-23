@@ -1,5 +1,6 @@
 import {Entity, hasMany, model, property} from '@loopback/repository';
 import {Coupure} from './coupure.model';
+import {Ligcaibur} from './ligcaibur.model';
 
 @model()
 export class Devise extends Entity {
@@ -24,6 +25,9 @@ export class Devise extends Entity {
 
   @hasMany(() => Coupure)
   coupures: Coupure[];
+
+  @hasMany(() => Ligcaibur)
+  ligcaiburs: Ligcaibur[];
 
   constructor(data?: Partial<Devise>) {
     super(data);

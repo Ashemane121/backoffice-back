@@ -22,3 +22,5 @@ export * from './devise.controller';
 export * from './coupure.controller';
 export * from './devise-coupure.controller';
 export * from './pays.controller';
+export * from './devise-ligcaibur.controller';
+export * from './stat.controller';

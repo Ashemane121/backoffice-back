@@ -10,12 +10,6 @@ export class Ligcaibur extends Entity {
   id?: string;
 
   @property({
-    type: 'string',
-    required: true,
-  })
-  devise: string;
-
-  @property({
     type: 'number',
     required: true,
   })
@@ -25,6 +19,11 @@ export class Ligcaibur extends Entity {
     type: 'string',
   })
   bureauId?: string;
+
+  @property({
+    type: 'string',
+  })
+  deviseId?: string;
 
   constructor(data?: Partial<Ligcaibur>) {
     super(data);
