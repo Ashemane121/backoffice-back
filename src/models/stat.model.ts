@@ -15,6 +15,15 @@ export class Stat extends Entity {
   })
   datevalide: boolean;
 
+  @property({
+    type: 'string',
+  })
+  bureauId?: string;
+
+  @property({
+    type: 'string',
+  })
+  associationId?: string;
 
   constructor(data?: Partial<Stat>) {
     super(data);

@@ -24,3 +24,4 @@ export * from './devise-coupure.controller';
 export * from './pays.controller';
 export * from './devise-ligcaibur.controller';
 export * from './stat.controller';
+export * from './bureau-association.controller';

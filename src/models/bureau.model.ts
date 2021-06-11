@@ -4,6 +4,7 @@ import {Produit} from './produit.model';
 import {UtiBureau} from './uti-bureau.model';
 import {Utilisateur} from './utilisateur.model';
 import {Ligcaibur} from './ligcaibur.model';
+import {Stat} from './stat.model';
 
 @model()
 export class Bureau extends Entity {
@@ -84,6 +85,9 @@ export class Bureau extends Entity {
 
   @hasMany(() => Ligcaibur)
   ligcaiburs: Ligcaibur[];
+
+  @hasMany(() => Association, {through: {model: () => Stat}})
+  associations: Association[];
 
   constructor(data?: Partial<Bureau>) {
     super(data);
